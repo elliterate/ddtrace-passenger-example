@@ -1,7 +1,18 @@
 services:
+  datadog-agent:
+    image: datadog/agent:latest
+    environment:
+      - DD_API_KEY
+    volumes:
+     - /var/run/docker.sock:/var/run/docker.sock
+     - /proc/:/host/proc/:ro
+     - /sys/fs/cgroup:/host/sys/fs/cgroup:ro
   web:
     build: .
     volumes:
       - .:/app
     ports:
       - "${PORT:-8080}:3000"
+    environment:
+      - DD_AGENT_HOST=datadog-agent
+      - DD_SERVICE=ddtrace-passenger-example
