@@ -15,4 +15,6 @@ services:
       - "${PORT:-8080}:3000"
     environment:
       - DD_AGENT_HOST=datadog-agent
+      - DD_PROFILING_ENABLED=true
+      - DD_PROFILING_NO_SIGNALS_WORKAROUND_ENABLED
       - DD_SERVICE=ddtrace-passenger-example

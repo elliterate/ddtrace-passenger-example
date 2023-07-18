@@ -8,6 +8,7 @@ GEM
       msgpack
     debase-ruby_core_source (3.2.1)
     ffi (1.15.5)
+    google-protobuf (3.23.4)
     libdatadog (2.0.0.1.0)
     libddwaf (1.9.0.0.1)
       ffi (~> 1.0)
@@ -19,6 +20,7 @@ PLATFORMS
 
 DEPENDENCIES
   ddtrace
+  google-protobuf
   rack
 
 BUNDLED WITH

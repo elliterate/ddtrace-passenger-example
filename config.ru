@@ -1,3 +1,4 @@
+require 'datadog/profiling/preload'
 require 'ddtrace'
 require 'rack'
 
